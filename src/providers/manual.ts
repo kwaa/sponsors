@@ -14,5 +14,5 @@ export const manualProvider: Provider = {
             monthlyDollars: 300, // Special Sponsor
             isOneTime: true
         }
-    ] as Sponsorship[])
+    ] satisfies Sponsorship[])
 }
