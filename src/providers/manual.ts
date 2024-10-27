@@ -8,6 +8,11 @@ export const manualProvider: Provider = {
             sponsor: sponsorFromGitHub('Interstellar750'),
             monthlyDollars: -1, // Past Sponsor
             isOneTime: true
+        },
+        {
+            sponsor: sponsorFromGitHub('nekomeowww'),
+            monthlyDollars: 300, // Special Sponsor
+            isOneTime: true
         }
     ] as Sponsorship[])
 }
