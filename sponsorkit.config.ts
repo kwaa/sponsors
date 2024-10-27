@@ -14,29 +14,37 @@ const outputDir = fileURLToPath(new URL('./public', import.meta.url))
 
 const tiers: Tier[] = [
   {
-    title: 'XS (Past Sponsors)',
+    title: 'Past Sponsors',
     monthlyDollars: -1,
     preset: tierPresets.xs,
   },
   {
-    title: 'SM (Backers)',
+    title: 'Backers',
     preset: tierPresets.small,
   },
   {
-    title: 'MD (Sponsors)',
+    title: 'Sponsors',
     monthlyDollars: 4,
     preset: tierPresets.medium,
   },
   {
-    title: 'LG (Sponsors)',
+    title: 'Gold Sponsors',
     monthlyDollars: 16,
     preset: tierPresets.large,
   },
   {
-    title: 'XL (Sponsors)',
+    title: 'Platinum Sponsors',
     monthlyDollars: 32,
     preset: tierPresets.xl,
   },
+  {
+    title: 'Special Sponsors',
+    monthlyDollars: 300,
+    preset: {
+      ...tierPresets.xl,
+      avatar: { size: 100 },
+    }
+  }
 ]
 
 const providers: (ProviderName | Provider)[] = [
