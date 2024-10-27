@@ -5,9 +5,9 @@
   "scripts": {
     "build": "sponsorkit"
   },
-  "packageManager": "pnpm@9.5.0",
+  "packageManager": "pnpm@9.12.2",
   "devDependencies": {
-    "@types/node": "^20.14.10",
-    "sponsorkit": "^0.14.6"
+    "@types/node": "^22.8.1",
+    "sponsorkit": "^0.15.5"
   }
 }
