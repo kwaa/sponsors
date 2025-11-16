@@ -12,6 +12,7 @@ import { manualProvider } from './src/providers/manual'
 
 const outputDir = fileURLToPath(new URL('./public', import.meta.url))
 
+/** @see {@link https://github.com/sponsors/kwaa} */
 const tiers: Tier[] = [
   {
     title: 'Past Sponsors',
@@ -20,35 +21,37 @@ const tiers: Tier[] = [
   },
   {
     title: 'Backers',
-    preset: tierPresets.small,
+    preset: tierPresets.xs,
   },
   {
     title: 'Sponsors',
-    monthlyDollars: 4,
+    monthlyDollars: 5,
+    preset: tierPresets.small,
+  },
+  {
+    title: 'Bronze Sponsors',
+    monthlyDollars: 10,
+    preset: tierPresets.medium,
+  },
+  {
+    title: 'Silver Sponsors',
+    monthlyDollars: 20,
     preset: tierPresets.medium,
   },
   {
     title: 'Gold Sponsors',
-    monthlyDollars: 16,
+    monthlyDollars: 50,
     preset: tierPresets.large,
   },
   {
     title: 'Platinum Sponsors',
-    monthlyDollars: 32,
+    monthlyDollars: 100,
     preset: tierPresets.xl,
   },
-  {
-    title: 'Special Sponsors',
-    monthlyDollars: 300,
-    preset: {
-      ...tierPresets.xl,
-      avatar: { size: 100 },
-    }
-  }
 ]
 
 const providers: (ProviderName | Provider)[] = [
-  // 'github',
+  'github',
   // 'patreon',
   manualProvider
 ]
