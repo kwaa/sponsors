@@ -5,21 +5,21 @@ on:
   schedule:
     - cron: '0 0 * * *'
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   update-sponsors:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v3
-      - uses: actions/setup-node@v4
-        # with:
-        #   node-version: lts/*
-      - run: corepack enable && pnpm i && pnpm build
-        # env:
-        #   SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
-        #   SPONSORKIT_GITHUB_LOGIN: kwaa
+      - uses: actions/checkout@v6
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v6
+        with:
+          cache: pnpm
+      - run: pnpm i && pnpm build
+        env:
+          SPONSORKIT_GITHUB_TOKEN: ${{ secrets.SPONSORKIT_GITHUB_TOKEN }}
+          SPONSORKIT_GITHUB_LOGIN: kwaa
         #   SPONSORKIT_OPENCOLLECTIVE_KEY: ${{ secrets.SPONSORKIT_OPENCOLLECTIVE_KEY }}
         #   SPONSORKIT_OPENCOLLECTIVE_SLUG: kwaa
       - uses: EndBug/add-and-commit@v5
